@@ -57,7 +57,7 @@ Users can quickly start automated testing by providing a website URL.
 
 Selenium automatically launches a browser and interacts with the website.
 
-![Browser Automation](screenshots/browser_test.png)
+![Browser Automation](screenshots/bt.png)
 
 The system performs tests such as:
 
