@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestPilot QA — AI-Powered Website Testing</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563EB'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>T</text></svg>">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                <path d="M10 12h12M10 16h8M10 20h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="23" cy="21" r="4" fill="#60A5FA" stroke="white" stroke-width="1.5"/>
+                <path d="M22 21l1 1 2-2" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            TestPilot QA
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <h1>AI-Powered Website Testing</h1>
+    <p>Automatically generate test cases, run automated Selenium tests, and detect website issues instantly.</p>
+    <div class="search-bar">
+        <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://example.com)" autocomplete="off" spellcheck="false">
+        <button class="btn-primary" id="runBtn" type="button" onclick="runTests()">Run Test</button>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- Loading -->
+    <div id="loadingSection" class="hidden">
+        <div class="loading-card">
+            <div class="spinner"></div>
+            <h3 style="margin-bottom:20px;font-size:16px;">Running Tests...</h3>
+            <ul class="loading-steps">
+                <li><span class="step-icon">&#9675;</span> Scanning website...</li>
+                <li><span class="step-icon">&#9675;</span> Generating AI test cases...</li>
+                <li><span class="step-icon">&#9675;</span> Running Selenium tests...</li>
+                <li><span class="step-icon">&#9675;</span> Analyzing results...</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsSection" class="hidden">
+
+        <!-- Report Header -->
+        <div class="section">
+            <div class="report-header" id="reportHeader"></div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="section">
+            <div class="section-title">Test Summary</div>
+            <div class="summary-grid">
+                <div class="summary-card total">
+                    <div class="number" id="totalCount">0</div>
+                    <div class="label">Total Tests</div>
+                </div>
+                <div class="summary-card passed">
+                    <div class="number" id="passedCount">0</div>
+                    <div class="label">Passed</div>
+                </div>
+                <div class="summary-card failed">
+                    <div class="number" id="failedCount">0</div>
+                    <div class="label">Failed</div>
+                </div>
+                <div class="summary-card time">
+                    <div class="number" id="timeCount">0s</div>
+                    <div class="label">Duration</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Results -->
+        <div class="section">
+            <div class="section-title">Test Results</div>
+            <div class="test-list" id="testList"></div>
+        </div>
+
+        <!-- Screenshots -->
+        <div class="section hidden" id="screenshotSection">
+            <div class="section-title">Failure Screenshots</div>
+            <div class="screenshot-grid" id="screenshotGrid"></div>
+        </div>
+
+        <!-- AI Test Cases -->
+        <div class="section hidden" id="aiTestCasesSection">
+            <div class="section-title">AI Generated Test Cases</div>
+            <div id="aiTestCasesList"></div>
+        </div>
+
+        <!-- AI Failure Analysis -->
+        <div class="section hidden" id="aiAnalysisSection">
+            <div class="section-title">AI Analysis</div>
+            <div id="aiAnalysisList"></div>
+        </div>
+
+    </div>
+
+    <!-- Recent Tests -->
+    <div class="section hidden" id="recentSection">
+        <div class="section-title">Recent Tests</div>
+        <div class="recent-list" id="recentList"></div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    TestPilot QA &mdash; AI-Powered Website Testing Platform
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
